@@ -178,12 +178,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 subtitle: const Text('Save a backup file of all your workouts, routines, and measurements'),
                 onTap: _exportData,
               ),
-              ListTile(
-                leading: const Icon(Icons.file_upload_outlined),
-                title: const Text('Import data'),
-                subtitle: const Text('Restore or merge from a previously exported backup file'),
-                onTap: _importData,
-              ),
               const Divider(),
               const _SectionHeader('Danger Zone'),
               ListTile(
