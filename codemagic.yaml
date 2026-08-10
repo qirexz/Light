@@ -7,13 +7,12 @@ workflows:
     scripts:
       - name: Generate Android platform files
         script: flutter create . --platforms=android
-      - name: Patch Android build settings
+      - name: Enable core library desugaring
         script: |
           if [ -f android/app/build.gradle.kts ]; then
             cat >> android/app/build.gradle.kts << 'EOF'
 
           android {
-              compileSdk = 36
               compileOptions {
                   isCoreLibraryDesugaringEnabled = true
               }
@@ -27,7 +26,6 @@ workflows:
             cat >> android/app/build.gradle << 'EOF'
 
           android {
-              compileSdkVersion 36
               compileOptions {
                   coreLibraryDesugaringEnabled true
               }
